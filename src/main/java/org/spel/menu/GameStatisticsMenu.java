@@ -8,12 +8,15 @@ import org.spel.player.Player;
 import java.text.DecimalFormat;
 import java.util.List;
 
+
 public class GameStatisticsMenu extends Menu {
     private final GameState gameState;
+    private final List<GameResult> gameHistory;
 
     public GameStatisticsMenu(GameState gameState) {
         super("SpelHistorik - Meny");
         this.gameState = gameState;
+        this.gameHistory = gameState.getGameHistory();
 
         menuOptions = List.of(
                 new MenuOption(1, "Visa spelhistorik", this::displayGameHistory),
@@ -23,7 +26,6 @@ public class GameStatisticsMenu extends Menu {
     }
 
     private void displayGameHistory() {
-        List<GameResult> gameHistory = gameState.getGameHistory();
 
         System.out.println("\nSpelhistorik:");
         int count = 0;
@@ -34,11 +36,14 @@ public class GameStatisticsMenu extends Menu {
     }
 
     private void displayPlayerStatistics() {
-        List<GameResult> gameHistory = gameState.getGameHistory();
+        if (gameState == null || gameHistory == null) {
+            return;
+        }
         HumanPlayer humanPlayer = gameState.getHumanPlayer();
         List<Player> opponents = gameState.getOpponents();
 
         int totalPlayerWins = humanPlayer.getTotalWins();
+        System.out.println("TOTALPLAYERWINS IN STATISTICS: " + totalPlayerWins);
         int totalRounds = gameHistory.size();
 
         System.out.println("\nStatistik för " + humanPlayer.getName() + ":");

@@ -1,11 +1,13 @@
 package org.spel.player;
 
 
+import org.spel.game.Choice;
+
 import java.time.LocalTime;
 
 
 public class TimeBasedComputerPlayer implements Player{
-    private String name;
+    private final String name;
     private int totalWins;
 
     public TimeBasedComputerPlayer() {
@@ -13,21 +15,17 @@ public class TimeBasedComputerPlayer implements Player{
     }
 
     @Override
-    public String makeMove() {
+    public Choice makeMove() {
         int l = LocalTime.now().getSecond();
 
         if (l < 20) {
-            return "sten";
+            return Choice.STEN;
         }else if (l >= 20 && l <= 40) {
-            return "sax";
+            return Choice.SAX;
         }
-        return "påse";
+        return Choice.PÅSE;
     }
 
-    @Override
-    public void setTotalWins(int totalWins) {
-        this.totalWins = totalWins;
-    }
     @Override
     public void incrementTotalWins() {
         totalWins++;

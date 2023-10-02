@@ -4,30 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efcebb9b-abf7-48c1-9195-f08ae87ae83e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/game/GameResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/game/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/game/RockPaperScissorsGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/GameStatisticsMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/MenuOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/MenuState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/MenuSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/RockPaperScissorsMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/HumanPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/NamedComputerPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/RandomComputerPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/TimeBasedComputerPlayer.java" afterDir="false" />
+    <list default="true" id="efcebb9b-abf7-48c1-9195-f08ae87ae83e" name="Changes" comment="Added GameResult class to handle game outcomes.&#10;Implemented GameState class to manage game state.&#10;Created RockPaperScissorsGame class as the core game logic.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/spel/game/Choice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/game/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/game/GameResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/game/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/game/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/game/RockPaperScissorsGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/game/RockPaperScissorsGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/menu/GameStatisticsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/GameStatisticsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/menu/RockPaperScissorsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/menu/RockPaperScissorsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/player/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/player/NamedComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/NamedComputerPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/player/RandomComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/RandomComputerPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/spel/player/TimeBasedComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/spel/player/TimeBasedComputerPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +28,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -54,21 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nenad/OneDrive/Skrivbord/VIKTORLEKTIONER&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/nenad/IdeaProjects/Inlemning-JavaDesign",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.spel.Main" />
@@ -115,9 +105,60 @@
       <workItem from="1695377867316" duration="11499000" />
       <workItem from="1695630209509" duration="50000" />
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <option name="closed" value="true" />
+      <created>1695813643528</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695813643528</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created Menu, MenuOption, MenuState, and MenuSystem classes to handle menu navigation.&#10;Added RockPaperScissorsMenu class for in-game menu options.&#10;Added GameStatisticsMenu class for displaying game statistics.">
+      <option name="closed" value="true" />
+      <created>1695814159869</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695814159869</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Player class as the base class for all player types.&#10;Implemented HumanPlayer class for human player interactions.&#10;Created NamedComputerPlayer class for computer players with customizable names.&#10;Added RandomComputerPlayer class for computer players with random move choices.&#10;Implemented TimeBasedComputerPlayer class for computer players with time-based decision-making.">
+      <option name="closed" value="true" />
+      <created>1695814205204</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695814205204</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added GameResult class to handle game outcomes.&#10;Implemented GameState class to manage game state.&#10;Created RockPaperScissorsGame class as the core game logic.">
+      <option name="closed" value="true" />
+      <created>1695814219679</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695814219679</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init" />
+    <MESSAGE value="Created Menu, MenuOption, MenuState, and MenuSystem classes to handle menu navigation.&#10;Added RockPaperScissorsMenu class for in-game menu options.&#10;Added GameStatisticsMenu class for displaying game statistics." />
+    <MESSAGE value="Added Player class as the base class for all player types.&#10;Implemented HumanPlayer class for human player interactions.&#10;Created NamedComputerPlayer class for computer players with customizable names.&#10;Added RandomComputerPlayer class for computer players with random move choices.&#10;Implemented TimeBasedComputerPlayer class for computer players with time-based decision-making." />
+    <MESSAGE value="Added GameResult class to handle game outcomes.&#10;Implemented GameState class to manage game state.&#10;Created RockPaperScissorsGame class as the core game logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GameResult class to handle game outcomes.&#10;Implemented GameState class to manage game state.&#10;Created RockPaperScissorsGame class as the core game logic." />
   </component>
 </project>

@@ -14,7 +14,10 @@ public class RockPaperScissorsMenu extends Menu {
         super("Rock-Paper-Scissors");
         this.gameState = gameState;
         this.game = new RockPaperScissorsGame(gameState);
-        menuOptions = List.of(new MenuOption(1, "Spela Rock-Paper-Scissors", this::playRockPaperScissors), new MenuOption(2, "Gå tillbaka till huvudmenyn", this::goBackToMainMenu));
+        menuOptions = List.of(
+                new MenuOption(1, "Spela Rock-Paper-Scissors", this::playRockPaperScissors),
+                new MenuOption(2, "Gå tillbaka till huvudmenyn", this::goBackToMainMenu)
+        );
     }
 
     private void playRockPaperScissors() {

@@ -1,13 +1,15 @@
 package org.spel.player;
 
 
+import org.spel.game.Choice;
+
 import java.util.Scanner;
 
 public class HumanPlayer implements Player {
 
     private String name;
     private int totalWins;
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public HumanPlayer(String name) {
         this.name = name;
@@ -25,19 +27,29 @@ public class HumanPlayer implements Player {
 
 
     @Override
-    public String makeMove() {
+    public Choice makeMove() {
         System.out.print(name + ", välj sten, sax eller påse: ");
-        String choice;
+        Choice choice;
         do {
-            choice = scanner.next();
-        } while (!isValidChoice(choice));
+            String input = scanner.next().toLowerCase();
+            switch (input) {
+                case "sten":
+                    choice = Choice.STEN;
+                    break;
+                case "sax":
+                    choice = Choice.SAX;
+                    break;
+                case "påse":
+                    choice = Choice.PÅSE;
+                    break;
+                default:
+                    choice = null;
+                    break;
+            }
+        } while (choice == null);
         return choice;
     }
 
-    @Override
-    public void setTotalWins(int totalWins) {
-        this.totalWins = totalWins;
-    }
 
     @Override
     public void incrementTotalWins() {

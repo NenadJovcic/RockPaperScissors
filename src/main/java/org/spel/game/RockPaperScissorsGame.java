@@ -15,6 +15,8 @@ public class RockPaperScissorsGame {
     private final Scanner scanner = new Scanner(System.in);
     private final GameState gameState;
 
+
+
     public RockPaperScissorsGame(GameState gameState) {
         this.gameState = gameState;
     }
@@ -71,38 +73,45 @@ public class RockPaperScissorsGame {
 
 
         while (playerWins < roundsToWin && opponentWins < roundsToWin) {
-            String playerChoice = humanPlayer.makeMove();
-            String opponentChoice = currentOpponent.makeMove();
+            Choice playerChoice = humanPlayer.makeMove();
+            Choice opponentChoice = currentOpponent.makeMove();
 
             String result = determineWinner(playerChoice, opponentChoice, humanPlayer, currentOpponent);
             System.out.println(result);
 
-            GameResult gameResult = new GameResult.Builder().playerName(humanPlayer.getName()).opponentName(currentOpponent.getName()).playerChoice(playerChoice).opponentChoice(opponentChoice).result(result).build();
+            GameResult gameResult = new GameResult.Builder()
+                    .playerName(humanPlayer.getName())
+                    .opponentName(currentOpponent.getName())
+                    .playerChoice(playerChoice)
+                    .opponentChoice(opponentChoice)
+                    .result(result)
+                    .build();
 
             gameState.addGameResult(gameResult);
 
             if (result.equals(humanPlayer.getName() + " vinner!")) {
                 playerWins++;
-                humanPlayer.setTotalWins(humanPlayer.getTotalWins() + playerWins);
             } else if (result.equals(currentOpponent.getName() + " vinner!")) {
                 opponentWins++;
-                currentOpponent.setTotalWins(currentOpponent.getTotalWins() + opponentWins);
             }
-
         }
 
         System.out.println("Matchen avslutades med att " + humanPlayer.getName() + " hade " + playerWins + " vinster och " + currentOpponent.getName() + " hade " + opponentWins + " vinster.");
     }
 
-    private String determineWinner(String playerChoice, String opponentChoice, HumanPlayer player, Player opponent) {
-        if (playerChoice.equals(opponentChoice)) {
+    private String determineWinner(Choice playerChoice, Choice opponentChoice, HumanPlayer player, Player opponent) {
+        if (playerChoice == opponentChoice) {
             return "Oavgjort!";
-        } else if ((playerChoice.equals("sten") && opponentChoice.equals("sax")) || (playerChoice.equals("sax") && opponentChoice.equals("påse")) || (playerChoice.equals("påse") && opponentChoice.equals("sten"))) {
+        }
+
+        boolean playerWins = (playerChoice == Choice.STEN && opponentChoice == Choice.SAX) ||
+                (playerChoice == Choice.SAX && opponentChoice == Choice.PÅSE) ||
+                (playerChoice == Choice.PÅSE && opponentChoice == Choice.STEN);
+
+        if (playerWins) {
             return player.getName() + " vinner!";
-        } else if ((playerChoice.equals("sten") && opponentChoice.equals("påse")) || (playerChoice.equals("sax") && opponentChoice.equals("sten")) || (playerChoice.equals("påse") && opponentChoice.equals("sax"))) {
-            return opponent.getName() + " vinner!";
         } else {
-            return "Ogiltigt val.";
+            return opponent.getName() + " vinner!";
         }
     }
 }

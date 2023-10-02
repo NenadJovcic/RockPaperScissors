@@ -1,12 +1,14 @@
 package org.spel.player;
 
+import org.spel.game.Choice;
+
 import java.util.Random;
 
 public class RandomComputerPlayer implements Player {
-    private String name;
+    private final String name;
     private int totalWins;
-    private static final String[] moves = {"sten", "sax", "påse"};
-    private Random random = new Random();
+    private static final Choice[] moves = {Choice.STEN, Choice.SAX, Choice.PÅSE};
+    private final Random random = new Random();
 
     public RandomComputerPlayer() {
         this.name = "Slumpis";
@@ -23,14 +25,11 @@ public class RandomComputerPlayer implements Player {
     }
 
     @Override
-    public String makeMove() {
+    public Choice makeMove() {
         return moves[random.nextInt(moves.length)];
     }
 
-    @Override
-    public void setTotalWins(int totalWins) {
-        this.totalWins = totalWins;
-    }
+
     @Override
     public void incrementTotalWins() {
         totalWins++;

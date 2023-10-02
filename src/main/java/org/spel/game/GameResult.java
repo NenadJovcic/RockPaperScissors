@@ -3,8 +3,8 @@ package org.spel.game;
 public class GameResult {
     private String playerName;
     private String opponentName;
-    private String playerChoice;
-    private String opponentChoice;
+    private Choice playerChoice;
+    private Choice opponentChoice;
     private String result;
 
     private GameResult() {
@@ -13,8 +13,8 @@ public class GameResult {
     public static class Builder {
         private String playerName;
         private String opponentName;
-        private String playerChoice;
-        private String opponentChoice;
+        private Choice playerChoice;
+        private Choice opponentChoice;
         private String result;
 
         public Builder() {
@@ -30,12 +30,12 @@ public class GameResult {
             return this;
         }
 
-        public Builder playerChoice(String playerChoice) {
+        public Builder playerChoice(Choice playerChoice) {
             this.playerChoice = playerChoice;
             return this;
         }
 
-        public Builder opponentChoice(String opponentChoice) {
+        public Builder opponentChoice(Choice opponentChoice) {
             this.opponentChoice = opponentChoice;
             return this;
         }
@@ -72,19 +72,19 @@ public class GameResult {
         this.opponentName = opponentName;
     }
 
-    public String getPlayerChoice() {
+    public Choice getPlayerChoice() {
         return playerChoice;
     }
 
-    public void setPlayerChoice(String playerChoice) {
+    public void setPlayerChoice(Choice playerChoice) {
         this.playerChoice = playerChoice;
     }
 
-    public String getOpponentChoice() {
+    public Choice getOpponentChoice() {
         return opponentChoice;
     }
 
-    public void setOpponentChoice(String opponentChoice) {
+    public void setOpponentChoice(Choice opponentChoice) {
         this.opponentChoice = opponentChoice;
     }
 
@@ -98,7 +98,13 @@ public class GameResult {
 
     @Override
     public String toString() {
-        return "GameResult{" + "playerName='" + playerName + '\'' + ", opponentName='" + opponentName + '\'' + ", playerChoice='" + playerChoice + '\'' + ", opponentChoice='" + opponentChoice + '\'' + ", result='" + result + '\'' + '}';
+        return "GameResult{" +
+                "playerName='" + playerName + '\'' +
+                ", opponentName='" + opponentName + '\'' +
+                ", playerChoice=" + playerChoice +
+                ", opponentChoice=" + opponentChoice +
+                ", result='" + result + '\'' +
+                '}';
     }
 }
 

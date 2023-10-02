@@ -1,8 +1,10 @@
 package org.spel.player;
 
+import org.spel.game.Choice;
+
 public class NamedComputerPlayer implements Player {
-    private String playerName;
-    private String name;
+    private final String playerName;
+    private final String name;
     private int totalWins;
 
     public NamedComputerPlayer(String playerName) {
@@ -21,19 +23,15 @@ public class NamedComputerPlayer implements Player {
     }
 
     @Override
-    public String makeMove() {
+    public Choice makeMove() {
         if (playerName.charAt(0) > 'G' && playerName.charAt(0) < 'L') {
-            return "sten";
+            return Choice.STEN;
         } else if (playerName.charAt(0) > 'L' && playerName.charAt(0) < 'O') {
-            return "sax";
+            return Choice.SAX;
         }
-        return "påse";
+        return Choice.PÅSE;
     }
 
-    @Override
-    public void setTotalWins(int totalWins) {
-        this.totalWins = totalWins;
-    }
 
     private String makeFirstLetterCapital(String name) {
         if (name.isEmpty()) return null;
