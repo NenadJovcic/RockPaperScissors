@@ -26,7 +26,6 @@ public class GameStatisticsMenu extends Menu {
     }
 
     private void displayGameHistory() {
-
         System.out.println("\nSpelhistorik:");
         int count = 0;
         for (GameResult result : gameHistory) {
@@ -43,7 +42,6 @@ public class GameStatisticsMenu extends Menu {
         List<Player> opponents = gameState.getOpponents();
 
         int totalPlayerWins = humanPlayer.getTotalWins();
-        System.out.println("TOTALPLAYERWINS IN STATISTICS: " + totalPlayerWins);
         int totalRounds = gameHistory.size();
 
         System.out.println("\nStatistik för " + humanPlayer.getName() + ":");

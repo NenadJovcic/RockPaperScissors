@@ -16,13 +16,8 @@ public class MenuSystem implements MenuState {
     private static final GameState gameState;
 
     static {
-        List<GameResult> gameHistory = new ArrayList<>();
         HumanPlayer humanPlayer = createHumanPlayerWithPrompt();
-
-        List<Player> opponents = new ArrayList<>();
         gameState = new GameState(humanPlayer);
-        gameState.setOpponents(opponents);
-
         activeMenu = new MainMenu(gameState);
     }
 
@@ -55,28 +50,4 @@ public class MenuSystem implements MenuState {
     }
 
 
-  /*  public static List<GameResult> getGameHistory() {
-        return gameState.getGameHistory();
-    }
-
-    public static HumanPlayer getHumanPlayer() {
-        return gameState.getHumanPlayer();
-    }
-
-    public static List<Player> getOpponents() {
-        return gameState.getOpponents();
-    }
-
-    public static void setGameHistory(List<GameResult> newGameHistory) {
-        gameState.getGameHistory().clear();
-        gameState.getGameHistory().addAll(newGameHistory);
-    }
-
-    public static void setHumanPlayer(HumanPlayer newHumanPlayer) {
-        gameState.getHumanPlayer().setName(newHumanPlayer.getName());
-    }
-
-    public static void setOpponents(List<Player> newOpponents) {
-        gameState.setOpponents(newOpponents);
-    }*/
 }

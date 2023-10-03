@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MainMenu extends Menu implements MenuState {
-    private static final Scanner scanner = new Scanner(System.in);
-
 
     public MainMenu(GameState gameState) {
         super("HuvudMeny");
